@@ -1,0 +1,9 @@
+2020-05-30 08:59:22,371  INFO [main] LoginPage:65 - TestLogin Started ..................
+2020-05-30 08:59:28,001  INFO [main] LoginPage:43 - User click on reject on DND prompt
+2020-05-30 08:59:28,298  INFO [main] LoginPage:45 - Click on Heartfulness Meditation 
+2020-05-30 08:59:31,316  INFO [main] LoginPage:47 - Click on Login button
+2020-05-30 08:59:44,366  INFO [main] LoginPage:51 - User enters the email address :devsoftwareengg@gmail.com
+2020-05-30 08:59:54,677  INFO [main] LoginPage:55 - User enters password
+2020-05-30 08:59:56,623  INFO [main] LoginPage:58 - User enters Login button
+2020-05-30 09:00:01,877  INFO [main] LoginPage:60 - User will see the loggedin name Hello, DEVESH
+2020-05-30 09:00:01,877  INFO [main] LoginPage:69 - Test Completed ..................
