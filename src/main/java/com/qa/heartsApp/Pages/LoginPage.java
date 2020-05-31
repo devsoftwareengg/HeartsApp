@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.qa.heartsApp.BaseClass.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.By;
 
 public class LoginPage extends TestBase{
 
@@ -47,11 +48,11 @@ public class LoginPage extends TestBase{
 		Log.info("Click on Login button");
 		Email.click();
 		Email.clear();
-		Email.sendKeys("devsoftwareengg@gmail.com");
+		Email.sendKeys("preceptor.2@mailinator.com");
 		Log.info("User enters the email address :");
 		Password.click();
 		Password.clear();
-		Password.sendKeys("Password1");
+		Password.sendKeys("preceptor");
 		Log.info("User enters password");
 		LoginSubmitBtn.click();
 		LoginSubmitBtn.click();
