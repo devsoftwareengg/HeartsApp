@@ -48,7 +48,7 @@ public class LoginPage extends TestBase{
 		Log.info("Click on Login button");
 		Email.click();
 		Email.clear();
-		Email.sendKeys("preceptor.2@mailinator.com");
+		Email.sendKeys("preceptor.6@mailinator.com");
 		Log.info("User enters the email address :");
 		Password.click();
 		Password.clear();
@@ -57,7 +57,7 @@ public class LoginPage extends TestBase{
 		LoginSubmitBtn.click();
 		LoginSubmitBtn.click();
 		Log.info("User enters Login button");
-		wait.until(ExpectedConditions.textToBePresentInElement(UserName, "Hello, DEVES"));
+		wait.until(ExpectedConditions.textToBePresentInElement(UserName, "Hello"));
 		Log.info("User will see the loggedin name " + UserName.getText());
 	}
 	

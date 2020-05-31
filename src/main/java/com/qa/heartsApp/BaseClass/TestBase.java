@@ -10,7 +10,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
-
+import com.microsoft.appcenter.appium.EnhancedAndroidDriver;
 import com.qa.heartsApp.Utilities.TestUtility;
 import com.qa.heartsApp.Utilities.WebEventListener;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -22,7 +22,8 @@ import io.appium.java_client.android.AndroidElement;
 
 public class TestBase {
 
-	public static AndroidDriver<AndroidElement> driver = null;
+	//public static AndroidDriver<AndroidElement> driver = null;
+	public static EnhancedAndroidDriver<AndroidElement> driver;
 	public static Properties property;
 	public static Logger Log;
 	public static EventFiringWebDriver e_driver;

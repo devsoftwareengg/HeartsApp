@@ -22,9 +22,9 @@
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
-      		<artifactId>junit</artifactId>
-      		<version>4.9</version>
-      		<scope>test</scope>
+			<artifactId>junit</artifactId>
+			<version>4.9</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -144,10 +144,10 @@
 			<version>2.41.2</version>
 		</dependency>
 		<dependency>
-    		<groupId>com.microsoft.appcenter</groupId>
-    		<artifactId>appium-test-extension</artifactId>
-    		<version>1.5</version>
-    	</dependency>
+			<groupId>com.microsoft.appcenter</groupId>
+			<artifactId>appium-test-extension</artifactId>
+			<version>1.5</version>
+		</dependency>
 
 	</dependencies>
 
@@ -197,80 +197,94 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	  <repositories>
-    <repository>
-      <id>jcenter</id>
-      <url>https://jcenter.bintray.com/</url>
-    </repository>
-  </repositories>
-  
-  <profiles>
-  <profile>
-  <id>prepare-for-upload</id>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.10</version>
-        <executions>
-          <execution>
-            <id>copy-dependencies</id>
-            <phase>package</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/upload/dependency-jars/</outputDirectory>
-              <useRepositoryLayout>true</useRepositoryLayout>
-              <copyPom>true</copyPom>
-              <addParentPoms>true</addParentPoms>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-help-plugin</artifactId>
-        <version>2.2</version>
-        <executions>
-          <execution>
-            <id>generate-pom</id>
-            <phase>package</phase>
-            <goals>
-              <goal>effective-pom</goal>
-            </goals>
-            <configuration>
-              <output>${project.build.directory}/upload/pom.xml</output>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-testclasses</id>
-            <phase>package</phase>
-            <goals>
-              <goal>testResources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/upload/test-classes</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>
-                    ${project.build.testOutputDirectory}
-                  </directory>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-</profile>
-  </profiles>
+	<repositories>
+		<repository>
+			<id>jcenter</id>
+			<url>https://jcenter.bintray.com/</url>
+		</repository>
+	</repositories>
+
+	<profiles>
+		<profile>
+			<id>prepare-for-upload</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<version>2.10</version>
+						<executions>
+							<execution>
+								<id>copy-dependencies</id>
+								<phase>package</phase>
+								<goals>
+									<goal>copy-dependencies</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${project.build.directory}/upload/dependency-jars/</outputDirectory>
+									<useRepositoryLayout>true</useRepositoryLayout>
+									<copyPom>true</copyPom>
+									<addParentPoms>true</addParentPoms>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-help-plugin</artifactId>
+						<version>2.2</version>
+						<executions>
+							<execution>
+								<id>generate-pom</id>
+								<phase>package</phase>
+								<goals>
+									<goal>effective-pom</goal>
+								</goals>
+								<configuration>
+									<output>${project.build.directory}/upload/pom.xml</output>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-resources-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>copy-testclasses</id>
+								<phase>package</phase>
+								<goals>
+									<goal>testResources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${project.build.directory}/upload/test-classes</outputDirectory>
+									<resources>
+										<resource>
+											<directory>
+												${project.build.testOutputDirectory}
+											</directory>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<!-- I don't specify version at all (Spring Boot can autoconfigure 
+							plugin version) -->
+						<executions>
+							<execution>
+								<!-- changed <id> to <phase>, but I don't know whether it's important 
+									or not. -->
+								<phase>integration-test</phase>
+								<!-- ... no changes here: the same as in the question ... -->
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

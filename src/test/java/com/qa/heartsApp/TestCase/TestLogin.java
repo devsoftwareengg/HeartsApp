@@ -25,12 +25,12 @@ import com.microsoft.appcenter.appium.EnhancedAndroidDriver;
 import com.microsoft.appcenter.appium.EnhancedIOSDriver;
 import io.appium.java_client.MobileElement;
 
-public class LoginTests extends TestBase {
+public class TestLogin extends TestBase {
 	LoginPage loginPage;
 	String sheetName = "Login";
 	@Rule
     public TestWatcher watcher = Factory.createWatcher();
-	private static EnhancedAndroidDriver<AndroidElement> driver;
+	//private static EnhancedAndroidDriver<AndroidElement> driver;
 	
 	@BeforeClass
 	public static void setup() {
@@ -40,7 +40,7 @@ public class LoginTests extends TestBase {
 			DesiredCapabilities dc = new DesiredCapabilities();
 			// dc.setCapability("app", property.getProperty("App_file_Path"));
 			dc.setCapability(CapabilityType.VERSION, "10");
-			dc.setCapability("deviceName", "emulator-5554");
+			dc.setCapability("deviceName", "Pixel 2");
 			dc.setCapability(MobileCapabilityType.UDID, "FA7AE1A02036");
 			dc.setCapability("automationName", "UiAutomator1");
 			dc.setCapability("appActivity", "com.hfn.unified.MainActivity");
