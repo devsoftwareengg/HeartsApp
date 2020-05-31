@@ -5,11 +5,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import org.apache.log4j.Logger;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+
 
 import com.qa.heartsApp.Utilities.TestUtility;
 import com.qa.heartsApp.Utilities.WebEventListener;
@@ -44,46 +45,46 @@ public class TestBase {
 		}
 	}
 	
-	@BeforeTest
-	public void setExtent()
-	{
-		TestUtility.setDateForLog4j();
-		//Telling System Where Exactly Extent Report has to be Generated under Project.
-		extent = new ExtentReports(System.getProperty("user.dir") + "/TestResults/ExtentReport" + TestUtility.getSystemDate() + ".html");
-		extent.addSystemInfo("Host Name", "Devesh Pixel Android 10 device");
-		extent.addSystemInfo("User Name", "Devesh Kumar");
-		extent.addSystemInfo("Environment", "Automation Testing");
-	}
+//	@Before
+//	public void setExtent()
+//	{
+//		TestUtility.setDateForLog4j();
+//		//Telling System Where Exactly Extent Report has to be Generated under Project.
+//		extent = new ExtentReports(System.getProperty("user.dir") + "/TestResults/ExtentReport" + TestUtility.getSystemDate() + ".html");
+//		extent.addSystemInfo("Host Name", "Devesh Pixel Android 10 device");
+//		extent.addSystemInfo("User Name", "Devesh Kumar");
+//		extent.addSystemInfo("Environment", "Automation Testing");
+//	}
 	
-	@AfterTest
-	public void endReport()
-	{
-		extent.flush();
-		extent.close();
-	}
+//	@AfterClass
+//	public  void endReport()
+//	{
+//		extent.flush();
+//		extent.close();
+//	}
 	
-	@AfterMethod
-	public void tearDown(ITestResult result) throws IOException
-	{
-		if(result.getStatus()==ITestResult.FAILURE)
-		{
-			extentTest.log(LogStatus.FAIL, "Test Case Failed is "+result.getName()); //To Add Name in Extent Report.
-			extentTest.log(LogStatus.FAIL, "Test Case Failed is "+result.getThrowable()); //To Add Errors and Exceptions in Extent Report.
-		
-			String screenshotPath = TestUtility.getScreenshot(driver, result.getName());
-			extentTest.log(LogStatus.FAIL, extentTest.addScreenCapture(screenshotPath)); //To Add Screenshot in Extent Report.
-		}
-		else if(result.getStatus()==ITestResult.SKIP)
-		{
-			extentTest.log(LogStatus.SKIP, "Test Case Skipped is " + result.getName());
-		}
-		else if(result.getStatus()==ITestResult.SUCCESS)
-		{
-			extentTest.log(LogStatus.PASS, "Test Case Passed is " + result.getName());
-		}
-		extent.endTest(extentTest); //Ending Test and Ends the Current Test and Prepare to Create HTML Report.
-		driver.quit();
-		Log.info("Browser Terminated");
-		Log.info("-----------------------------------------------");
-	}
+//	@After
+//	public void tearDown(ITestResult result) throws IOException
+//	{
+//		if(result.getStatus()==ITestResult.FAILURE)
+//		{
+//			extentTest.log(LogStatus.FAIL, "Test Case Failed is "+result.getName()); //To Add Name in Extent Report.
+//			extentTest.log(LogStatus.FAIL, "Test Case Failed is "+result.getThrowable()); //To Add Errors and Exceptions in Extent Report.
+//		
+//			String screenshotPath = TestUtility.getScreenshot(driver, result.getName());
+//			extentTest.log(LogStatus.FAIL, extentTest.addScreenCapture(screenshotPath)); //To Add Screenshot in Extent Report.
+//		}
+//		else if(result.getStatus()==ITestResult.SKIP)
+//		{
+//			extentTest.log(LogStatus.SKIP, "Test Case Skipped is " + result.getName());
+//		}
+//		else if(result.getStatus()==ITestResult.SUCCESS)
+//		{
+//			extentTest.log(LogStatus.PASS, "Test Case Passed is " + result.getName());
+//		}
+//		extent.endTest(extentTest); //Ending Test and Ends the Current Test and Prepare to Create HTML Report.
+//		driver.quit();
+//		Log.info("Browser Terminated");
+//		Log.info("-----------------------------------------------");
+//	}
 }

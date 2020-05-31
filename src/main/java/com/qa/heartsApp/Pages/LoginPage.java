@@ -36,7 +36,7 @@ public class LoginPage extends TestBase{
 	WebElement UserName;
 	
 	
-	public void LoginUserPage(String username, String password) {
+	public void LoginUserPage() {
 		wait = new WebDriverWait(driver, 50);
 		
 		DNDPromptReject.click();
@@ -47,16 +47,16 @@ public class LoginPage extends TestBase{
 		Log.info("Click on Login button");
 		Email.click();
 		Email.clear();
-		Email.sendKeys(username);
-		Log.info("User enters the email address :" + username);
+		Email.sendKeys("devsoftwareengg@gmail.com");
+		Log.info("User enters the email address :");
 		Password.click();
 		Password.clear();
-		Password.sendKeys(password);
+		Password.sendKeys("Password1");
 		Log.info("User enters password");
 		LoginSubmitBtn.click();
 		LoginSubmitBtn.click();
 		Log.info("User enters Login button");
-		wait.until(ExpectedConditions.textToBePresentInElement(UserName, "Hello, DEVESH"));
+		wait.until(ExpectedConditions.textToBePresentInElement(UserName, "Hello, DEVES"));
 		Log.info("User will see the loggedin name " + UserName.getText());
 	}
 	

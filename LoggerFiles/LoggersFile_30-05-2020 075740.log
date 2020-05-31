@@ -1,0 +1,21 @@
+2020-05-30 19:57:45,660  INFO [main] LoginPage:65 - TestLogin Started ..................
+2020-05-30 19:57:51,561  INFO [main] LoginPage:43 - User click on reject on DND prompt
+2020-05-30 19:57:51,879  INFO [main] LoginPage:45 - Click on Heartfulness Meditation 
+2020-05-30 19:57:55,301  INFO [main] LoginPage:47 - Click on Login button
+2020-05-30 19:58:07,106  INFO [main] LoginPage:51 - User enters the email address :devsoftwareengg@gmail.com
+2020-05-30 19:58:16,944  INFO [main] LoginPage:55 - User enters password
+2020-05-30 19:58:18,569  INFO [main] LoginPage:58 - User enters Login button
+2020-05-30 19:58:24,366  INFO [main] LoginPage:60 - User will see the loggedin name Hello, DEVESH
+2020-05-30 19:58:24,367  INFO [main] LoginPage:69 - Test Completed ..................
+2020-05-30 19:58:26,132  INFO [main] LoginPage:86 - Browser Terminated
+2020-05-30 19:58:26,132  INFO [main] LoginPage:87 - -----------------------------------------------
+2020-05-30 19:58:26,156 DEBUG [main] cache:45 - Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
+2020-05-30 19:58:26,157 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
+2020-05-30 19:58:26,159 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2020-05-30 19:58:26,160 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2020-05-30 19:58:26,160 DEBUG [main] cache:45 - Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/Users/deveshk/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+2020-05-30 19:58:26,414 DEBUG [main] cache:45 - Couldn't find template in cache for "Extent.ftl"("en_IN", UTF-8, parsed); will try to load it.
+2020-05-30 19:58:26,414 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en_IN.ftl"): Not found
+2020-05-30 19:58:26,415 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+2020-05-30 19:58:26,415 DEBUG [main] cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+2020-05-30 19:58:26,415 DEBUG [main] cache:45 - Loading template for "Extent.ftl"("en_IN", UTF-8, parsed) from "jar:file:/Users/deveshk/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"

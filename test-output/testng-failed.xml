@@ -6,8 +6,6 @@
       <class name="com.qa.heartsApp.TestCase.LoginTests">
         <methods>
           <include name="testLogin"/>
-          <include name="teardown"/>
-          <include name="setup"/>
         </methods>
       </class> <!-- com.qa.heartsApp.TestCase.LoginTests -->
     </classes>
