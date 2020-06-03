@@ -221,7 +221,8 @@
 									<goal>copy-dependencies</goal>
 								</goals>
 								<configuration>
-									<outputDirectory>${project.build.directory}/upload/dependency-jars/</outputDirectory>
+									<outputDirectory>${project.build.directory}/upload/dependency-jars/
+									</outputDirectory>
 									<useRepositoryLayout>true</useRepositoryLayout>
 									<copyPom>true</copyPom>
 									<addParentPoms>true</addParentPoms>
@@ -257,7 +258,8 @@
 									<goal>testResources</goal>
 								</goals>
 								<configuration>
-									<outputDirectory>${project.build.directory}/upload/test-classes</outputDirectory>
+									<outputDirectory>${project.build.directory}/upload/test-classes
+									</outputDirectory>
 									<resources>
 										<resource>
 											<directory>
@@ -282,6 +284,13 @@
 								<!-- ... no changes here: the same as in the question ... -->
 							</execution>
 						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.10</version>
+						<configuration>
+							<useFile>false</useFile>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
